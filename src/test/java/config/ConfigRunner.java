@@ -24,14 +24,7 @@ public class ConfigRunner {
             Configuration.browserCapabilities = capabilities;
         }
 
-        switch (config.getBrowser()) {
-            case CHROME, FIREFOX -> {
-                Configuration.browser = config.getBrowser().browserToLowerCase();
-            }
-            default -> throw new RuntimeException("No such driver");
-        }
-
-
+        Configuration.browser = config.getBrowser();
         Configuration.pageLoadStrategy = "eager";
         Configuration.browserVersion = config.getBrowserVersion();
         Configuration.browserSize = config.getBrowserSize();
