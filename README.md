@@ -200,13 +200,13 @@ gradle clean test -Denv=remote
 <img src="images/screenshots/allure-suites.png">
 
 
-## Интеграция с <b><a target="_blank" href="https://allure.autotests.cloud/project/3876/dashboards">Allure TestOps</a></b>
+## Интеграция с <b><a target="_blank" href="https://allure.autotests.cloud/project/4579/dashboards">Allure TestOps</a></b>
 
 >Диаграммы прохождения тестов
 >
 <img src="images/screenshots/allure-testops-dashboards.png">
 
-## Интеграция с <b><a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1005">Jira</a></b>
+## Интеграция с <b><a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1387">Jira</a></b>
 
 >В Jira создана задача
 >
