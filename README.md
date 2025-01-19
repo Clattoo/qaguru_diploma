@@ -23,7 +23,7 @@
   
 
 ## Описание
-Habitica — трекер задач, который совместил философию RPG и GTD(доведение дел до завершения) в своей веб-версии и приложениях для Android и iOS.
+Habitica — трекер задач, который позволяет пользователю планировать свою жизнь и не только.Habitica доступна в веб-версии и приложениях для Android и iOS.
 Проект состоит из UI-тестов, API и мобильных тестов на Android. <br/>
 
 **Особенности проекта**:
@@ -68,14 +68,11 @@ Habitica — трекер задач, который совместил фило
 
 ## Реализованные проверки
 ### Web
-- [x] Проверка заголовка домашней страницы
-- [x] Рендеринг на странице особого элемента, выбранного в фильтре
-- [x] Рендеринг на странице особого элемента при поиске его в строке поиска
-- [x] Проверка текста всплывающей подсказки на кнопке идентификатора пользователя
-- [x] Проверка заголовков страниц, открываемых при нажатии на ссылки выпадающего меню "Инвентарь" (@ParameterizedTest)
-- [x] Быстрое добавление привычки в список
-- [x] Переадресация на страницу регистрации при нажатии кнопки "Get Started" домашней страницы
-- [x] Неудачная регистрация без заполнения всех полей
+- [x] Проверка перехода на страницу регистрации
+- [x] Проверка перехода к разделу "Мобильные приложения" при нажатии на соответствующую кнопку
+- [x] Проверки появления уведомления об ошибке регистрации пользователя на домашней странице в случаях, когда пользователь не заполняет требующиеся поля
+- [x] Проверка ошибок регистрации и успешной регистрации пользователя на странице регистрации с использованием технологии Faker
+- [x] Проверка включения фильтра предметов по классу в разделе Shops/Market (@ParameterizedTest + @WithLogin)
 
 ### Api
 - [x] Выполнение успешного запроса на авторизацию
@@ -85,9 +82,9 @@ Habitica — трекер задач, который совместил фило
 - [x] Выполнение запроса на удаление тега
 
 ### Mobile
-- [x] Неудачная попытка регистрации с недействительным адресом электронной почты.
-- [x] Неудачная попытка регистрации без заполнения всех полей
-- [x] Неудачная попытка регистрации со слишком коротким паролем
+- [x] Проверка пропуска этапа онбординга через кнопку Skip
+- [x] Появление ошибки логина пользователя в случае, если пользователь не ввел полностью требующиеся данные
+- [x] Успешный логин в аккаунт существующего пользователя
 
 ### Ручные проверки:
 - [x] Быстрое добавление ежедневного дела в список
@@ -111,11 +108,11 @@ flowchart LR
     C --> E[web]
     C --> F[api]
     C --> G[android]
-    E --> H[-DenvWeb=local]
-    E --> I[-DenvWeb=remote]
-    G --> J[-DenvMobile=browserstack]
-    G --> K[-DenvMobile=emulator]
-    G --> L[-DenvMobile=localDevice]
+    E --> H[-Denv=local]
+    E --> I[-Denv=remote]
+    G --> J[-DdeviceHost=browserstack]
+    G --> K[-DdeviceHost=emulator]
+    G --> L[-DdeviceHost=real]
 ```
 
 ### Локальный запуск тестов
@@ -150,9 +147,9 @@ gradle clean api
 gradle clean android -DenvMobile=${ENV_MOBILE}
 ```
 Для запуска мобильных тестов нужно определить значение envMobile:
-- [ ] <code>-DenvMobile=browserstack</code> : тесты будут запущены в облачной платформе <a target="_blank" href="https://www.browserstack.com/"> Browserstack </a> 
-- [ ] <code>-DenvMobile=emulator</code> : тесты будут запущены в эмуляторе, созданном средствами Appium Server & Appium Inspector. <br/> <a target="_blank" href="https://autotest.how/appium-setup-for-local-android-tutorial"> Инструкция по настройке </a> 
-- [ ] <code>-DenvMobile=localDevice</code> : тесты будут запущены на устройстве, подключенному по usb. <br/> Так же требуется настройка Appium Server & Appium Inspector
+- [ ] <code>-DdeviceHost=browserstack</code> : тесты будут запущены в облачной платформе <a target="_blank" href="https://www.browserstack.com/"> Browserstack </a> 
+- [ ] <code>-DdeviceHost=emulator</code> : тесты будут запущены в эмуляторе, созданном средствами Appium Server & Appium Inspector. <br/> <a target="_blank" href="https://autotest.how/appium-setup-for-local-android-tutorial-md"> Инструкция по настройке </a> 
+- [ ] <code>-DdeviceHost=real</code> : тесты будут запущены на устройстве, подключенному по usb. <br/> Так же требуется настройка Appium Server & Appium Inspector
 
 <details>
    <summary>Дополнительные команды:</summary>
@@ -175,15 +172,7 @@ gradle allureServe
 gradle clean test -Denv=remote
 ```
 
-Параметры, которыми можно управлять:
-```
--DbrowserName - наименование браузера. По умолчанию chrome
--DbrowserVersion - номер версии браузера. По умолчанию 100.0
--DbrowserSize - размер окна браузера. По умолчанию 1980x1080
--DremoteUrl - адрес удаленного сервера, на котором будут запускаться тесты
-```
-
-## Cборка тестов в <b><a target="_blank" href="https://jenkins.autotests.cloud/job/C22-VadimSolonin-habitica-project/">Jenkins</a></b>
+## Cборка тестов в <b><a target="_blank" href="https://jenkins.autotests.cloud/job/C30-mentiza-diploma/">Jenkins</a></b>
 
 >Для запуска сборки необходимо перейти в раздел `Build with Parameters` и нажать кнопку `Build`
 
@@ -195,7 +184,7 @@ gradle clean test -Denv=remote
 <img src="images/screenshots/jenkins-build.png"/>
 </p>
 
-## Интеграция с <b><a target="_blank" href="https://jenkins.autotests.cloud/job/C22-VadimSolonin-habitica-project/13/allure/">Allure report</a></b>
+## Интеграция с <b><a target="_blank" href="https://jenkins.autotests.cloud/job/C30-mentiza-diploma/allure/">Allure report</a></b>
 #### Диаграммы прохождения тестов
 `ALLURE REPORT` - отображает дату и время теста, общее количество запущенных тестов, а также диаграмму с процентом и количеством успешных, упавших и сломавшихся в процессе выполнения тестов <br/>
 `TREND` - отображает тенденцию выполнения тестов для всех запусков <br/>
