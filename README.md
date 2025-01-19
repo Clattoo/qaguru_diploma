@@ -34,8 +34,7 @@ Habitica — трекер задач, который позволяет поль
 - Использование `Lombok` для моделей в API тестах
 - Использование собственных расширений:
     - `@WithLogin` для предварительной авторизации
-    - `@LoggingExtension` для дополнительного логирования тестов
-- Возможность запуска тестов напрямую из Allure TestOps
+- Интеграция Allure TestOps
 - Интеграция с Jira
 - Уведомление о результатах прохождения в Telegram
 - По итогу прохождения автотестов генерируется Allure отчет. Содержание отчета:
@@ -140,7 +139,7 @@ gradle clean api
 #### Mobile
 
 ```
-gradle clean android -DenvMobile=${ENV_MOBILE}
+gradle clean android -DdeviceHost=${DEVICE_HOST}
 ```
 Для запуска мобильных тестов нужно определить значение envMobile:
 - [ ] <code>-DdeviceHost=browserstack</code> : тесты будут запущены в облачной платформе <a target="_blank" href="https://www.browserstack.com/"> Browserstack </a> 
