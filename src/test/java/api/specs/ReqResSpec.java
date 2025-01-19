@@ -12,7 +12,9 @@ import static io.restassured.filter.log.LogDetail.STATUS;
 public class ReqResSpec {
     public static RequestSpecification requestSpec = with()
             .filter(withCustomTemplates())
-            .log().all();
+            .log().uri()
+            .log().headers()
+            .log().body();
 
     public static ResponseSpecification responseSpec = new ResponseSpecBuilder()
             .log(STATUS)

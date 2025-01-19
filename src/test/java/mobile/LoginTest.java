@@ -18,6 +18,8 @@ import static io.qameta.allure.SeverityLevel.CRITICAL;
 @Tag("android")
 public class LoginTest extends MobileTestBase {
 
+    AuthData authData = new AuthData();
+
     OnboardingComponent onboardingComponent = new OnboardingComponent();
     AuthorizationScreen authorizationScreen = new AuthorizationScreen();
     LoginScreen loginScreen = new LoginScreen();
@@ -39,7 +41,7 @@ public class LoginTest extends MobileTestBase {
     public void loginWithoutUserNameTest() {
         onboardingComponent.clickSkipButton();
         authorizationScreen.clickLoginButton();
-        loginScreen.setPassword(AuthData.PASSWORD)
+        loginScreen.setPassword(authData.password)
                 .clickLoginButton()
                 .checkErrorTitleNotification("Validation Error");
     }
@@ -50,9 +52,9 @@ public class LoginTest extends MobileTestBase {
     public void loginWithUserNameAndPasswordTest() {
         onboardingComponent.clickSkipButton();
         authorizationScreen.clickLoginButton();
-        loginScreen.setUserName(AuthData.USER_NAME)
-                .setPassword(AuthData.PASSWORD)
+        loginScreen.setUserName(authData.userName)
+                .setPassword(authData.password)
                 .clickLoginButton();
-        profileScreen.checkProfileName(AuthData.USER_NAME);
+        profileScreen.checkProfileName(authData.userName);
     }
 }
