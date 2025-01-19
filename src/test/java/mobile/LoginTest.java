@@ -9,7 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-@Tag("android")
+//@Tag("android")
 public class LoginTest extends MobileTestBase {
 
     OnboardingComponent onboardingComponent = new OnboardingComponent();
