@@ -12,7 +12,7 @@ import static io.restassured.http.ContentType.JSON;
 
 public class AuthorizationApi {
 
-    @Step("Make login request and write down response using API")
+    @Step("Отправить запрос на логин и записать полученный ответ с помощью API")
     public LoginResponseModel login(LoginRequestModel loginRequestModel) {
         return given(requestSpec)
                 .body(loginRequestModel)
