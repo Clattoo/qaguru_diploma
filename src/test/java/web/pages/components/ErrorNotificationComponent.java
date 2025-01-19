@@ -11,7 +11,7 @@ public class ErrorNotificationComponent {
 
     private final SelenideElement errorNotification = $(".notification-holder");
 
-    @Step("Проверка появления ошибки регистрации после нажатия кнопки 'Регистрация'")
+    @Step("Проверка появления ошибки регистрации после нажатия кнопки регистрации")
     public void checkErrorNotification(String errorText) {
         errorNotification.shouldBe(visible);
         errorNotification.shouldHave(text(errorText));

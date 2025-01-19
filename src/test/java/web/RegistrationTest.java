@@ -38,7 +38,7 @@ public class RegistrationTest extends TestBase {
                 .checkLoginForm()
                 .setUserEmail(userEmail)
                 .clickRegistrationButton()
-                .checkErrorNotification("Отсутствует имя пользователя. Отсутствует пароль.");
+                .checkErrorNotification("Missing username. Missing password.");
     }
 
     @Test
@@ -49,6 +49,6 @@ public class RegistrationTest extends TestBase {
                 .setUserName(userName)
                 .setUserEmail(userEmail)
                 .clickRegistrationButton()
-                .checkErrorNotification("Отсутствует пароль.");
+                .checkErrorNotification("Missing password.");
     }
 }

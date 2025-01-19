@@ -17,7 +17,7 @@ public class HomePageTest extends TestBase {
     String userName = randomUtils.getRandomUserName();
 
     @Test
-    @DisplayName("При нажатии на кнопку 'Начать' пользователь попадает на страницу регистрации пользователя")
+    @DisplayName("При нажатии на кнопку 'Get Started' пользователь попадает на страницу регистрации пользователя")
     void openRegistrationPageFromHomePageTest() {
         homePage.openHomePage()
                 .clickBeginButton();
@@ -25,24 +25,24 @@ public class HomePageTest extends TestBase {
     }
 
     @Test
-    @DisplayName("При нажатии на кнопку 'Регистрация' без ввода имени, почты и пароля пользователя появляется уведомление с полным текстом ошибки")
+    @DisplayName("При нажатии на кнопку 'Sign Up' без ввода имени, почты и пароля пользователя появляется уведомление с полным текстом ошибки")
     void clickRegistrationButtonWithoutUserNameEmailPasswordTest() {
         homePage.openHomePage()
                 .clickRegistrationButton()
-                .checkErrorNotification("Отсутствует имя пользователя. Отсутствует адрес электронной почты. Отсутствует пароль.");
+                .checkErrorNotification("Missing username. Missing email. Missing password.");
     }
 
     @Test
-    @DisplayName("При нажатии на кнопку 'Регистрация' без ввода почты и пароля пользователя появляется уведомление с текстом об отсутствии почты и пароля")
+    @DisplayName("При нажатии на кнопку 'Sign Up' без ввода почты и пароля пользователя появляется уведомление с текстом об отсутствии почты и пароля")
     void clickRegistrationButtonWithoutEmailPasswordTest() {
         homePage.openHomePage()
                 .setUserName(userName)
                 .clickRegistrationButton()
-                .checkErrorNotification("Отсутствует адрес электронной почты. Отсутствует пароль.");
+                .checkErrorNotification("Missing email. Missing password.");
     }
 
     @Test
-    @DisplayName("При нажатии на кнопку 'Мобильные приложения' пользователь переходит к разделу о мобильных приложениях внутри домашней страницы")
+    @DisplayName("При нажатии на кнопку 'Mobile Apps' пользователь переходит к разделу о мобильных приложениях внутри домашней страницы")
     void clickMobileAppsTest() {
         homePage.openHomePage()
                 .clickMobileAppsButton();

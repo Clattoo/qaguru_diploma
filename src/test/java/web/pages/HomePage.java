@@ -13,7 +13,7 @@ public class HomePage {
 
     ErrorNotificationComponent errorNotificationComponent = new ErrorNotificationComponent();
 
-    private final String textMobileAppsButton = "Мобильные приложения";
+    private final String textMobileAppsButton = "Mobile Apps";
 
     private final SelenideElement beginButton = $("a[href*='/register']"),
             userNameInput = $("#usernameInput"),
@@ -35,21 +35,21 @@ public class HomePage {
         return this;
     }
 
-    @Step("Нажать кнопку 'Начать' на домашней странице")
+    @Step("Нажать кнопку 'Get Started' на домашней странице")
     public HomePage clickBeginButton() {
         beginButton.click();
 
         return this;
     }
 
-    @Step("Нажать кнопку 'Регистрация' на домашней странице")
+    @Step("Нажать кнопку 'Sign Up' на домашней странице")
     public HomePage clickRegistrationButton() {
         registrationButton.click();
 
         return this;
     }
 
-    @Step("Нажать кнопку 'Мобильные приложения' на домашней странице")
+    @Step("Нажать кнопку 'Mobile Apps' на домашней странице")
     public HomePage clickMobileAppsButton() {
         mobileAppsButton.click();
         mobileAppsInfoArea.shouldBe(visible);
@@ -57,7 +57,7 @@ public class HomePage {
         return this;
     }
 
-    @Step("Проверка появления ошибки регистрации после нажатия кнопки 'Регистрация'")
+    @Step("Проверка появления ошибки регистрации после нажатия кнопки 'Sign Up'")
     public HomePage checkErrorNotification(String errorText) {
         errorNotificationComponent.checkErrorNotification(errorText);
 

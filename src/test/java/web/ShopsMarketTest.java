@@ -13,11 +13,11 @@ public class ShopsMarketTest extends TestBase {
     ShopsMarketPage shopsMarketPage = new ShopsMarketPage();
 
     @ValueSource(strings = {
-            "Целитель",
-            "Маг",
-            "Разбойник",
-            "Воин",
-            "Ничего"
+            "Healer",
+            "Mage",
+            "Rogue",
+            "Warrior",
+            "None"
     })
     @ParameterizedTest(name = "Проверка фильтрации вещей по классу {0} на странице Market")
     @WithLogin
