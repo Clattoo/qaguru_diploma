@@ -7,7 +7,8 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AddTagRequestModel {
     String name;
-    public AddTagRequestModel(String name){
+
+    public AddTagRequestModel(String name) {
         this.name = name;
     }
 }

@@ -13,10 +13,8 @@ public class ProfilePage {
             displayName = $("#displayName");
 
     @Step("Проверка соответствия имени для нового созданного пользователя")
-    public ProfilePage checkRegistrationOfNewUser(String userName) {
+    public void checkRegistrationOfNewUser(String userName) {
         welcomeSection.shouldBe(visible);
         displayName.shouldHave(value(userName));
-
-        return this;
     }
 }

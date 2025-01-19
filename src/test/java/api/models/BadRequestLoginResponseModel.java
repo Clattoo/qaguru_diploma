@@ -14,7 +14,7 @@ public class BadRequestLoginResponseModel {
 
     @Data
     @JsonIgnoreProperties(ignoreUnknown = true)
-    public static class LoginErrors{
+    public static class LoginErrors {
         String message, param, value;
     }
 }

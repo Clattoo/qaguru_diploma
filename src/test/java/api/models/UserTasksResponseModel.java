@@ -22,26 +22,29 @@ public class UserTasksResponseModel {
         List<History> history;
         List<Tags> tags;
         List<Reminders> reminders;
-        @JsonIgnoreProperties(ignoreUnknown = true)
-        public static class Challenge{
 
-        }
         @JsonIgnoreProperties(ignoreUnknown = true)
-        public static class Group{
+        public static class Challenge {
 
         }
 
         @JsonIgnoreProperties(ignoreUnknown = true)
-        public static class History{
-
-        }
-        @JsonIgnoreProperties(ignoreUnknown = true)
-        public static class Tags{
+        public static class Group {
 
         }
 
         @JsonIgnoreProperties(ignoreUnknown = true)
-        public static class Reminders{
+        public static class History {
+
+        }
+
+        @JsonIgnoreProperties(ignoreUnknown = true)
+        public static class Tags {
+
+        }
+
+        @JsonIgnoreProperties(ignoreUnknown = true)
+        public static class Reminders {
 
         }
     }

@@ -15,11 +15,12 @@ public class DeleteUserTaskResponseModel {
     String appVersion;
 
     @JsonIgnoreProperties(ignoreUnknown = true)
-    public static class TaskData{
+    public static class TaskData {
 
     }
+
     @JsonIgnoreProperties(ignoreUnknown = true)
-    public static class UserNotifications{
+    public static class UserNotifications {
 
     }
 }

@@ -36,10 +36,8 @@ public class HomePage {
     }
 
     @Step("Нажать кнопку 'Get Started' на домашней странице")
-    public HomePage clickBeginButton() {
+    public void clickBeginButton() {
         beginButton.click();
-
-        return this;
     }
 
     @Step("Нажать кнопку 'Sign Up' на домашней странице")
@@ -50,17 +48,13 @@ public class HomePage {
     }
 
     @Step("Нажать кнопку 'Mobile Apps' на домашней странице")
-    public HomePage clickMobileAppsButton() {
+    public void clickMobileAppsButton() {
         mobileAppsButton.click();
         mobileAppsInfoArea.shouldBe(visible);
-
-        return this;
     }
 
     @Step("Проверка появления ошибки регистрации после нажатия кнопки 'Sign Up'")
-    public HomePage checkErrorNotification(String errorText) {
+    public void checkErrorNotification(String errorText) {
         errorNotificationComponent.checkErrorNotification(errorText);
-
-        return this;
     }
 }

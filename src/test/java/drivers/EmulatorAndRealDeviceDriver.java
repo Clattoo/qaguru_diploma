@@ -23,9 +23,10 @@ public class EmulatorAndRealDeviceDriver implements WebDriverProvider {
 
     private final EmulatorRealDeviceConfig config;
 
-    public EmulatorAndRealDeviceDriver(){
+    public EmulatorAndRealDeviceDriver() {
         config = ConfigFactory.create(EmulatorRealDeviceConfig.class, System.getProperties());
     }
+
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
@@ -41,26 +42,26 @@ public class EmulatorAndRealDeviceDriver implements WebDriverProvider {
         return new AndroidDriver(getAppiumServerURL(), options);
     }
 
-    public URL getAppiumServerURL(){
-        try{
+    public URL getAppiumServerURL() {
+        try {
             return new URL(config.appiumServerUrl());
-        } catch (MalformedURLException e){
+        } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
     }
 
 
-    private String getAppPath(){
+    private String getAppPath() {
         String appVersion = "7971.apk";
         String appUrl = "https://github.com/HabitRPG/habitica-android" +
                 "/releases/download/4.4/" + appVersion;
         String appPath = "src/test/resources/apps/" + appVersion;
 
         File app = new File(appPath);
-        if (!app.exists()){
-            try(InputStream in = new URL(appUrl).openStream()){
+        if (!app.exists()) {
+            try (InputStream in = new URL(appUrl).openStream()) {
                 copyInputStreamToFile(in, app);
-            } catch (IOException e){
+            } catch (IOException e) {
                 throw new AssertionError("Failed to download application", e);
             }
         }

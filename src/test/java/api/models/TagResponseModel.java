@@ -13,15 +13,16 @@ public class TagResponseModel {
     List<UserNotifications> notifications;
     int userV;
     String appVersion;
+
     @Data
     @JsonIgnoreProperties(ignoreUnknown = true)
-    public static class TagData{
+    public static class TagData {
         String name, id;
     }
 
     @Data
     @JsonIgnoreProperties(ignoreUnknown = true)
-    public static class UserNotifications{
+    public static class UserNotifications {
 
     }
 }

@@ -12,17 +12,13 @@ public class AuthorizationScreen {
     loginButton = $(id("com.habitrpg.android.habitica:id/show_login_button"));
 
     @Step("Проверка открытия экрана с кнопками Login и Register")
-    public AuthorizationScreen checkLoginScreen() {
+    public void checkLoginScreen() {
         registerButton.shouldBe(visible);
         loginButton.shouldBe(visible);
-
-        return this;
     }
 
     @Step("Нажать на кнопку Login на странице авторизации пользователя")
-    public AuthorizationScreen clickLoginButton() {
+    public void clickLoginButton() {
         loginButton.click();
-
-        return this;
     }
 }

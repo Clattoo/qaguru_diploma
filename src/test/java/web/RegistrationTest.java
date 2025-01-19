@@ -2,7 +2,6 @@ package web;
 
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;

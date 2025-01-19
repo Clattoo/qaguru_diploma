@@ -15,9 +15,9 @@ public class OnboardingComponent {
 
 
     @Step("Нажать на кнопку 'Skip' во время онбординга")
-    public OnboardingComponent clickSkipButton() {
+    public void clickSkipButton() {
         skipButton.click();
-        return this;
+
     }
 
 

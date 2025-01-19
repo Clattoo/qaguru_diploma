@@ -71,9 +71,7 @@ public class RegistrationPage {
     }
 
     @Step("Проверка появления ошибки регистрации после нажатия кнопки 'Регистрация'")
-    public RegistrationPage checkErrorNotification(String errorText) {
+    public void checkErrorNotification(String errorText) {
         errorNotificationComponent.checkErrorNotification(errorText);
-
-        return this;
     }
 }

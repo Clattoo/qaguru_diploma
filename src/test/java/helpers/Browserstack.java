@@ -9,7 +9,7 @@ public class Browserstack {
     private static final BrowserstackConfig config =
             ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
 
-    public static String videoUrl (String sessionId){
+    public static String videoUrl(String sessionId) {
         String url = String.format("https://api.browserstack.com/app-automate/sessions/%s.json", sessionId);
 
         return given()
