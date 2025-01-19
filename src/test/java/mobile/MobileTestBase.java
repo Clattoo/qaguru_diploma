@@ -17,11 +17,11 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class MobileTestBase {
     @BeforeAll
-    public static void setUp(){
+    public static void setUp() {
         String deviceHost = System.getProperty("deviceHost");
-        if(deviceHost.equals("real") || deviceHost.equals("emulator")){
+        if (deviceHost.equals("real") || deviceHost.equals("emulator")) {
             Configuration.browser = EmulatorAndRealDeviceDriver.class.getName();
-        } else if(deviceHost.equals("browserstack")){
+        } else if (deviceHost.equals("browserstack")) {
             Configuration.browser = BrowserstackDriver.class.getName();
         }
         Configuration.browserSize = null;
@@ -43,7 +43,7 @@ public class MobileTestBase {
         if (System.getProperty("deviceHost").equals("emulation")) {
             MobileAttach.screenshotAs("Last screenshot");
         }
-        Attach.pageSource();
+        MobileAttach.pageSource();
         closeWebDriver();
     }
 }

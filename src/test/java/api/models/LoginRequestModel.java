@@ -1,10 +1,15 @@
 package api.models;
 
-import lombok.AllArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 @Data
-@AllArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class LoginRequestModel {
     String username, password;
+
+    public LoginRequestModel(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 }

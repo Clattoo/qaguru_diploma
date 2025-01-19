@@ -1,13 +1,15 @@
 package web;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import web.pages.ProfilePage;
 import web.pages.RegistrationPage;
 import utils.RandomUtils;
 
-
+@Tag("web")
 public class RegistrationTest extends TestBase {
+
     RegistrationPage registrationPage = new RegistrationPage();
     ProfilePage profilePage = new ProfilePage();
     RandomUtils randomUtils = new RandomUtils();

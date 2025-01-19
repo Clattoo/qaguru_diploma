@@ -11,10 +11,11 @@ public class LoginScreen {
     private final SelenideElement userNameField = $(id("com.habitrpg.android.habitica:id/username")),
     passwordField = $(id("com.habitrpg.android.habitica:id/password")),
     loginButton = $(id("com.habitrpg.android.habitica:id/login_btn")),
-    errorNotification = $(id("com.habitrpg.android.habitica:id/dialog_container"));
+    errorTitleNotification = $(id("com.habitrpg.android.habitica:id/titleTextView"));
 
     @Step("Ввод имени пользователя {username} в поле ввода")
     public LoginScreen setUserName(String username) {
+        userNameField.click();
         userNameField.setValue(username);
 
         return this;
@@ -22,6 +23,7 @@ public class LoginScreen {
 
     @Step("Ввод пароля пользователя {password} в поле ввода")
     public LoginScreen setPassword(String password) {
+        passwordField.click();
         passwordField.setValue(password);
 
         return this;
@@ -35,9 +37,7 @@ public class LoginScreen {
     }
 
     @Step("Проверка появления нотификации с ошибкой при нажатии на кнопку Login, когда не заполнены обязательные поля")
-    public LoginScreen checkErrorNotification(String value) {
-        errorNotification.shouldHave(text(value));
-
-        return this;
+    public void checkErrorTitleNotification(String text) {
+        errorTitleNotification.shouldHave(text(text));
     }
 }

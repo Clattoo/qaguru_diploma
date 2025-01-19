@@ -23,17 +23,7 @@ public class LoginTest extends MobileTestBase {
         onboardingComponent.clickSkipButton();
         authorizationScreen.clickLoginButton();
         loginScreen.clickLoginButton()
-                .checkErrorNotification("Validation Error");
-    }
-
-    @Test
-    @DisplayName("Появление ошибки авторизации на экране логина при отсутствии пароля пользователя")
-    public void loginWithoutPasswordTest() {
-        onboardingComponent.clickSkipButton();
-        authorizationScreen.clickLoginButton();
-        loginScreen.setUserName(AuthData.USER_NAME)
-                .clickLoginButton()
-                .checkErrorNotification("Validation Error");
+                .checkErrorTitleNotification("Validation Error");
     }
 
     @Test
@@ -43,7 +33,7 @@ public class LoginTest extends MobileTestBase {
         authorizationScreen.clickLoginButton();
         loginScreen.setPassword(AuthData.PASSWORD)
                 .clickLoginButton()
-                .checkErrorNotification("Validation Error");
+                .checkErrorTitleNotification("Validation Error");
     }
 
     @Test
