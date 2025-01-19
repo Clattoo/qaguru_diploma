@@ -1,5 +1,7 @@
 package web;
 
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -7,6 +9,7 @@ import web.pages.HomePage;
 import web.pages.RegistrationPage;
 import utils.RandomUtils;
 
+@Feature("Тестирование домашней страницы Habitica без активного аккаунта")
 @Tag("web")
 public class HomePageTest extends TestBase {
 
@@ -17,6 +20,7 @@ public class HomePageTest extends TestBase {
     String userName = randomUtils.getRandomUserName();
 
     @Test
+    @Severity("BLOCKER")
     @DisplayName("При нажатии на кнопку 'Get Started' пользователь попадает на страницу регистрации пользователя")
     void openRegistrationPageFromHomePageTest() {
         homePage.openHomePage()
@@ -25,6 +29,7 @@ public class HomePageTest extends TestBase {
     }
 
     @Test
+    @Severity("MAJOR")
     @DisplayName("При нажатии на кнопку 'Sign Up' без ввода имени, почты и пароля пользователя появляется уведомление с полным текстом ошибки")
     void clickRegistrationButtonWithoutUserNameEmailPasswordTest() {
         homePage.openHomePage()
@@ -33,6 +38,7 @@ public class HomePageTest extends TestBase {
     }
 
     @Test
+    @Severity("MAJOR")
     @DisplayName("При нажатии на кнопку 'Sign Up' без ввода почты и пароля пользователя появляется уведомление с текстом об отсутствии почты и пароля")
     void clickRegistrationButtonWithoutEmailPasswordTest() {
         homePage.openHomePage()
@@ -42,6 +48,7 @@ public class HomePageTest extends TestBase {
     }
 
     @Test
+    @Severity("MINOR")
     @DisplayName("При нажатии на кнопку 'Mobile Apps' пользователь переходит к разделу о мобильных приложениях внутри домашней страницы")
     void clickMobileAppsTest() {
         homePage.openHomePage()

@@ -1,6 +1,7 @@
 package mobile;
 
 import data.AuthData;
+import io.qameta.allure.Feature;
 import mobile.components.OnboardingComponent;
 import mobile.screens.AuthorizationScreen;
 import mobile.screens.LoginScreen;
@@ -9,7 +10,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-//@Tag("android")
+@Feature("Android. Тестирование логина пользователя.")
+@Tag("android")
 public class LoginTest extends MobileTestBase {
 
     OnboardingComponent onboardingComponent = new OnboardingComponent();

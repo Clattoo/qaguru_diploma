@@ -1,5 +1,8 @@
 package web;
 
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -7,6 +10,7 @@ import web.pages.ProfilePage;
 import web.pages.RegistrationPage;
 import utils.RandomUtils;
 
+@Feature("Тестирование страницы регистрации пользователя")
 @Tag("web")
 public class RegistrationTest extends TestBase {
 
@@ -19,7 +23,9 @@ public class RegistrationTest extends TestBase {
     String userEmail = randomUtils.getRandomEmail();
 
     @Test
+    @Severity("BLOCKER")
     @DisplayName("Успешная регистрация нового пользователя на странице регистрации")
+    @Story("Проверка ввода данных нового пользователя в доступные поля ввода и подтверждения регистрации")
     void successfulRegistrationOfNewUserTest() {
         registrationPage.openRegistrationPage()
                 .checkLoginForm()
@@ -32,7 +38,9 @@ public class RegistrationTest extends TestBase {
     }
 
     @Test
+    @Severity("CRITICAL")
     @DisplayName("Ошибка регистрации нового пользователя при отсутствии имени пользователя и пароля")
+    @Story("Проверка, что появляется уведомление с информацией о причине ошибки при регистрации, если пользователь не ввел имя и пароль")
     void failRegistrationOfNewUserWithoutUsernameAndPasswordTest() {
         registrationPage.openRegistrationPage()
                 .checkLoginForm()
@@ -42,7 +50,9 @@ public class RegistrationTest extends TestBase {
     }
 
     @Test
-    @DisplayName("Ошибка регистрации нового пользователя при отсутствии имени пользователя и пароля")
+    @Severity("MAJOR")
+    @DisplayName("Ошибка регистрации нового пользователя при отсутствии пароля")
+    @Story("Проверка, что появляется уведомление с информацией о причине ошибки при регистрации, если пользователь не ввел пароль")
     void failRegistrationOfNewUserWithoutPasswordTest() {
         registrationPage.openRegistrationPage()
                 .checkLoginForm()
