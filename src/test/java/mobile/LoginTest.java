@@ -3,7 +3,6 @@ package mobile;
 import data.AuthData;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
 import mobile.components.OnboardingComponent;
 import mobile.screens.AuthorizationScreen;
 import mobile.screens.LoginScreen;
