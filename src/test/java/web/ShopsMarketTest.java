@@ -29,7 +29,7 @@ public class ShopsMarketTest extends TestBase {
     @ParameterizedTest
     @WithLogin
     @Severity(MINOR)
-    @DisplayName("Включение фильтра по выбранному классу {0}")
+    @DisplayName("Включение фильтра классов по кнопке")
     @Story("Тестирование возможности использования фильтров по классам для выбора нужных предметов")
     public void checkFilterByClassNameTest(String className) {
         shopsMarketPage.openMarketPage()
