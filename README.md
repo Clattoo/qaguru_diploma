@@ -63,6 +63,35 @@ Habitica — трекер задач, который позволяет поль
 <a href="https://qameta.io/"><img alt="Allure TestOps" height="50" src="images/logo/Allure_TO.svg" width="50"/></a>
 <a href="https://www.atlassian.com/software/jira"><img alt="Jira" height="50" src="images/logo/Jira.svg" width="50"/></a>  
 <a href="https://telegram.org/"><img alt="Telegram" height="50" src="images/logo/Telegram.svg" width="50"/></a>
+
+> </br>
+> 
+> | Логотип                                                                                                                            | Название               | Предназначение                                                                                                    |
+> | :---:                                                                                                                              | :---:                  | :---                                                                                                              |
+> | <a href="https://www.jetbrains.com/idea"><img src="images/logo/Idea.svg" width="64" height="64" alt="Intellij IDEA"/></a>  | `Intellij`</br>`IDEA`  | Среда разработки программного обеспечения                                                                         |
+> | <a href="https://www.java.com"><img src="images/logo/Java.svg" width="64" height="64" alt="Java"/></a>                             | `Java`                 | Язык программирования, на котором написаны тесты                                                                  |
+> | <a href="https://junit.org/junit5"><img src="images/logo/Junit5.svg" width="64" height="64" alt="JUnit 5"/></a>                    | `JUnit 5`              | Фреймворк для модульного тестирования                                                                             |
+> | <a href="https://gradle.org"><img src="images/logo/Gradle.svg" width="64" height="64" alt="Gradle"/></a>                           | `Gradle`               | Система автоматической сборки                                                                                     |
+> | <a href="https://selenide.org"><img src="images/logo/Selenide.svg" width="64" height="64" alt="Selenide"/></a>                     | `Selenide`             | Фреймворк для автоматизированного тестирования веб-приложений                                                     |
+> | <a href="https://github.com"><img src="images/logo/GitHub.svg" width="64" height="64" alt="Github"/></a>                           | `Github`               | Веб-сервис для хостинга и совместной разработки IT-проектов                                                       |
+> | <a href="https://www.jenkins.io"><img src="images/logo/Jenkins.svg" width="64" height="64" alt="Jenkins"/></a>                     | `Jenkins`              | Программная система для обеспечения процесса непрерывной интеграции программного обеспечения                      |
+> | <a href="https://allurereport.org"><img src="images/logo/Allure.svg" width="64" height="64" alt="Allure Report"/></a>              | `Allure`</br>`Report`  | Инструмент для визуализации результатов тестового запуска                                                         |
+> | <a href="https://qameta.io"><img src="images/logo/Allure_TO.svg" width="64" height="64" alt="Allure TestOps"/></a>             | `Allure`</br>`TestOps` | Инструмент для управления тестированием, который помогает автоматизировать и оптимизировать процессы тестирования |
+> | <a href="https://www.atlassian.com/software/jira"><img src="images/logo/Jira.svg" width="64" height="64" alt="Jira"/></a>          | `Jira`                 | Система отслеживания ошибок и управления проектами                                                                |
+> | <a href="https://telegram.org/"><img src="images/logo/Telegram.svg" width="64" height="64" alt="Telegram"/></a>                    | `Telegram`             | Кроссплатформенная система мгновенного обмена сообщениями (мессенджер)                                            |
+> | <a href="https://aerokube.com/selenoid"><img src="images/logo/Selenoid.svg" width="64" height="64" alt="Selenoid"/></a>            | `Selenoid`             | Сервер, который позволяет запускать браузеры в docker-контейнерах                                                 |
+> | <a href="https://www.browserstack.com"><img src="images/logo/Browserstack.svg" width="64" height="64" alt="Selenoid"/></a>            | `BrowserStack`             | Облачная платформа для тестирования веб-сайтов и мобильных приложений, позволяющая использовать настоящие мобильные девайсы и не только                                                 |
+> | <a href="https://rest-assured.io/"><img src="images/logo/RestAssured.svg" width="64" height="64" alt="Selenoid"/></a>            | `Rest Assured`             | Технология, разработанная для упрощения тестирования и проверки REST API                                                 |
+> | <a href="https://developer.android.com/studio"><img src="images/logo/Android_Studio.svg" width="64" height="64" alt="Selenoid"/></a>            | `Android Studio`             | IDE для работы с платформой Android                                                 |
+> | <a href="https://appium.io/"><img src="images/logo/Appium.svg" width="64" height="64" alt="Selenoid"/></a>            | `Appium`             | Проект с открытым исходным кодом и экосистема связанного с ним программного обеспечения, предназначенная для автоматизации пользовательского интерфейса многих платформ приложений, включая мобильные (iOS, Android, Tizen), браузерные (Chrome, Firefox, Safari) и др.                                                |
+> 
+> </details>
+
+
+</br>
+</br>
+
+
 </div>
 
 ## Реализованные проверки
