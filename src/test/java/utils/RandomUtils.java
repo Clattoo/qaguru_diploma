@@ -18,5 +18,7 @@ public class RandomUtils {
         return faker.internet().password();
     }
 
-    public String programmingLanguage = faker.programmingLanguage().name();
+    public String getProgrammingLanguage() {
+        return faker.programmingLanguage().name();
+    }
 }

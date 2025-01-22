@@ -52,7 +52,8 @@ public class TagTest extends ApiTestBase {
     @DisplayName("Удаление тега с помощью API")
     @Story("Проверка успешного выполнения запроса на удаление тега")
     void deleteExistingTag() {
-        AddTagRequestModel addTag = new AddTagRequestModel(randomUtils.programmingLanguage);
+
+        AddTagRequestModel addTag = new AddTagRequestModel(randomUtils.getProgrammingLanguage());
 
         TagResponseModel postResponse = step("Добавить новый тег через POST", () ->
                 given(requestSpec)
