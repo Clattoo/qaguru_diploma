@@ -19,9 +19,11 @@ public class LoginExtension implements BeforeEachCallback {
 
     @Override
     public void beforeEach(ExtensionContext context) throws JsonProcessingException {
-        AuthData authData = new AuthData();
+        AuthData authData = AuthData.create();
+        String userName = authData.userName;
+        String userPassword = authData.password;
 
-        LoginRequestModel loginRequestModel = new LoginRequestModel(authData.userName, authData.password);
+        LoginRequestModel loginRequestModel = new LoginRequestModel(userName, userPassword);
         AuthorizationApi authorizationApi = new AuthorizationApi();
         LoginResponseModel loginResponse = authorizationApi.login(loginRequestModel);
 

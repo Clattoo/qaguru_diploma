@@ -19,11 +19,11 @@ public interface BrowserstackConfig extends Config {
     @Key("browserStackRemoteUrl")
     String getBrowserStackRemoteUrl();
 
-    @Key("user")
-    String getUser();
+    @Key("browserStackUser")
+    String getBrowserStackUser();
 
-    @Key("key")
-    String getKey();
+    @Key("browserStackKey")
+    String getBrowserStackKey();
 
     @Key("app")
     @DefaultValue("bs://sample.app")

@@ -22,9 +22,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @Tag("api")
 public class TagTest extends ApiTestBase {
 
-    final AuthData authData = new AuthData();
+    AuthData authData = AuthData.create();
+    String userName = authData.userName;
+    String userPassword = authData.password;
+
     final RandomUtils randomUtils = new RandomUtils();
-    final LoginRequestModel loginRequestModel = new LoginRequestModel(authData.userName, authData.password);
+    final LoginRequestModel loginRequestModel = new LoginRequestModel(userName, userPassword);
     final AuthorizationApi authorizationApi = new AuthorizationApi();
     final LoginResponseModel loginResponse = authorizationApi.login(loginRequestModel);
 

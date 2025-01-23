@@ -13,7 +13,7 @@ public class Browserstack {
         String url = String.format("https://api.browserstack.com/app-automate/sessions/%s.json", sessionId);
 
         return given()
-                .auth().basic(config.getUser(), config.getKey())
+                .auth().basic(config.getBrowserStackUser(), config.getBrowserStackKey())
                 .get(url)
                 .then()
                 .log().status()
