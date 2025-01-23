@@ -33,7 +33,7 @@ public class LoginExtension implements BeforeEachCallback {
         String result = mapper.writeValueAsString(habitMobileSettings);
         step("Authorization by filling in localStorage", () -> {
             open("/static/icons/favicon.ico");
-            Selenide.localStorage().setItem("habit-tests.mobile-settings", result);
+            Selenide.localStorage().setItem("habit-mobile-settings", result);
         });
     }
 }
