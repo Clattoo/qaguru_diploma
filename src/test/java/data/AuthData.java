@@ -1,6 +1,6 @@
 package data;
 
 public class AuthData {
-    public String userName = "qaguru_test";
-    public String password = "Test12345";
+    public final String userName = "qaguru_test";
+    public final String password = "Test12345";
 }

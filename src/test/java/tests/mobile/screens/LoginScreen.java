@@ -1,4 +1,4 @@
-package mobile.screens;
+package tests.mobile.screens;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
@@ -9,9 +9,9 @@ import static org.openqa.selenium.By.id;
 
 public class LoginScreen {
     private final SelenideElement userNameField = $(id("com.habitrpg.android.habitica:id/username")),
-    passwordField = $(id("com.habitrpg.android.habitica:id/password")),
-    loginButton = $(id("com.habitrpg.android.habitica:id/login_btn")),
-    errorTitleNotification = $(id("com.habitrpg.android.habitica:id/titleTextView"));
+            passwordField = $(id("com.habitrpg.android.habitica:id/password")),
+            loginButton = $(id("com.habitrpg.android.habitica:id/login_btn")),
+            errorTitleNotification = $(id("com.habitrpg.android.habitica:id/titleTextView"));
 
     @Step("Ввод имени пользователя {username} в поле ввода")
     public LoginScreen setUserName(String username) {

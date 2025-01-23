@@ -1,8 +1,8 @@
-package web.pages;
+package tests.web.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import web.pages.components.ErrorNotificationComponent;
+import tests.web.pages.components.ErrorNotificationComponent;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class HomePage {
 
-    ErrorNotificationComponent errorNotificationComponent = new ErrorNotificationComponent();
+    final ErrorNotificationComponent errorNotificationComponent = new ErrorNotificationComponent();
 
     private final String textMobileAppsButton = "Mobile Apps";
 
@@ -54,7 +54,7 @@ public class HomePage {
     }
 
     @Step("Проверка появления ошибки регистрации после нажатия кнопки 'Sign Up'")
-    public void checkErrorNotification(String errorText) {
+    public final void checkErrorNotification(String errorText) {
         errorNotificationComponent.checkErrorNotification(errorText);
     }
 }

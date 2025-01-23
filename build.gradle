@@ -16,8 +16,7 @@ def selenideVersion = "6.13.0",
     junitVersion = "5.9.3",
     fakerVersion = "1.0.2",
     assertjVersion = "3.24.2",
-    webdrivermanagerVersion = "5.9.2",
-    slf4jVersion = "2.0.7"
+    slf4jVersion = "2.0.16"
 
 
 allure {
@@ -41,7 +40,6 @@ dependencies {
             "io.qameta.allure:allure-selenide:$allureVersion",
             "io.qameta.allure:allure-rest-assured:$allureVersion",
             "org.assertj:assertj-core:$assertjVersion",
-            "io.github.bonigarcia:webdrivermanager:$webdrivermanagerVersion",
             "com.github.javafaker:javafaker:$fakerVersion",
             "com.codeborne:selenide:$selenideVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",

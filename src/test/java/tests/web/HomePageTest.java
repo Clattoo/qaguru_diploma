@@ -1,12 +1,13 @@
-package web;
+package tests.web;
 
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import web.pages.HomePage;
-import web.pages.RegistrationPage;
+import tests.web.pages.HomePage;
+import tests.web.pages.RegistrationPage;
+import tests.web.pages.TermsOfServicePage;
 import utils.RandomUtils;
 
 import static io.qameta.allure.SeverityLevel.*;
@@ -15,19 +16,24 @@ import static io.qameta.allure.SeverityLevel.*;
 @Tag("web")
 public class HomePageTest extends TestBase {
 
-    HomePage homePage = new HomePage();
-    RegistrationPage registrationPage = new RegistrationPage();
-    RandomUtils randomUtils = new RandomUtils();
+    final HomePage homePage = new HomePage();
+    final TermsOfServicePage termsOfServicePage = new TermsOfServicePage();
+    final RegistrationPage registrationPage = new RegistrationPage();
+    final RandomUtils randomUtils = new RandomUtils();
 
-    String userName = randomUtils.getRandomUserName();
+    final String userName = randomUtils.getRandomUserName();
+
+    final String agreementDocumentHeader = "Terms of Service";
 
     @Test
     @Severity(BLOCKER)
-    @DisplayName("При нажатии на кнопку 'Get Started' пользователь попадает на страницу регистрации пользователя")
+    @DisplayName("Пользователь может открыть документ 'Terms of Service' при переходе с домашней страницы на страницу регистрации")
     void openRegistrationPageFromHomePageTest() {
         homePage.openHomePage()
                 .clickBeginButton();
-        registrationPage.checkLoginForm();
+        registrationPage.checkLoginForm()
+                .clickTermsOfServiceButton();
+        termsOfServicePage.checkDocumentTitle(agreementDocumentHeader);
     }
 
     @Test

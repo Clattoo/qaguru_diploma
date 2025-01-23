@@ -1,10 +1,10 @@
-package mobile;
+package tests.mobile;
 
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.Story;
-import mobile.components.OnboardingComponent;
-import mobile.screens.AuthorizationScreen;
+import tests.mobile.components.OnboardingComponent;
+import tests.mobile.screens.AuthorizationScreen;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -15,8 +15,8 @@ import static io.qameta.allure.SeverityLevel.BLOCKER;
 @Tag("android")
 public class OnboardingTest extends MobileTestBase {
 
-    OnboardingComponent onboardingComponent = new OnboardingComponent();
-    AuthorizationScreen authorizationScreen = new AuthorizationScreen();
+    final OnboardingComponent onboardingComponent = new OnboardingComponent();
+    final AuthorizationScreen authorizationScreen = new AuthorizationScreen();
 
     @Test
     @Severity(BLOCKER)

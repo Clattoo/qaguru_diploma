@@ -10,13 +10,13 @@ import static io.restassured.filter.log.LogDetail.BODY;
 import static io.restassured.filter.log.LogDetail.STATUS;
 
 public class ReqResSpec {
-    public static RequestSpecification requestSpec = with()
+    public static final RequestSpecification requestSpec = with()
             .filter(withCustomTemplates())
             .log().uri()
             .log().headers()
             .log().body();
 
-    public static ResponseSpecification responseSpec = new ResponseSpecBuilder()
+    public static final ResponseSpecification responseSpec = new ResponseSpecBuilder()
             .log(STATUS)
             .log(BODY)
             .build();

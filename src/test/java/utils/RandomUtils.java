@@ -4,7 +4,7 @@ import com.github.javafaker.Faker;
 
 public class RandomUtils {
 
-    Faker faker = new Faker();
+    final Faker faker = new Faker();
 
     public String getRandomUserName() {
         return faker.name().username().replaceAll("[.]", "");

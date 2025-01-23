@@ -1,4 +1,4 @@
-package api;
+package tests.api;
 
 import api.api.AuthorizationApi;
 import api.models.*;
@@ -22,11 +22,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @Tag("api")
 public class TagTest extends ApiTestBase {
 
-    AuthData authData = new AuthData();
-    RandomUtils randomUtils = new RandomUtils();
-    LoginRequestModel loginRequestModel = new LoginRequestModel(authData.userName, authData.password);
-    AuthorizationApi authorizationApi = new AuthorizationApi();
-    LoginResponseModel loginResponse = authorizationApi.login(loginRequestModel);
+    final AuthData authData = new AuthData();
+    final RandomUtils randomUtils = new RandomUtils();
+    final LoginRequestModel loginRequestModel = new LoginRequestModel(authData.userName, authData.password);
+    final AuthorizationApi authorizationApi = new AuthorizationApi();
+    final LoginResponseModel loginResponse = authorizationApi.login(loginRequestModel);
 
     @Test
     @DisplayName("Запрос текущего списка тегов")

@@ -1,4 +1,4 @@
-package mobile.screens;
+package tests.mobile.screens;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
@@ -9,7 +9,7 @@ import static org.openqa.selenium.By.id;
 
 public class AuthorizationScreen {
     private final SelenideElement registerButton = $(id("com.habitrpg.android.habitica:id/new_game_button")),
-    loginButton = $(id("com.habitrpg.android.habitica:id/show_login_button"));
+            loginButton = $(id("com.habitrpg.android.habitica:id/show_login_button"));
 
     @Step("Проверка открытия экрана с кнопками Login и Register")
     public void checkLoginScreen() {

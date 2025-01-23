@@ -1,4 +1,4 @@
-package web.pages;
+package tests.web.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class ShopsMarketPage {
     private final SelenideElement classTypeDropdownButton = $(".btn.dropdown-toggle.btn-secondary"),
-    classTypeList = $(".dropdown-menu.dropdown-menu-right.show");
+            classTypeList = $(".dropdown-menu.dropdown-menu-right.show");
 
     @Step("Открыть страницу Market")
     public ShopsMarketPage openMarketPage() {

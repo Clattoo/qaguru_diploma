@@ -1,4 +1,4 @@
-package mobile.components;
+package tests.mobile.components;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;

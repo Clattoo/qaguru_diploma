@@ -1,4 +1,4 @@
-package web;
+package tests.web;
 
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
@@ -6,8 +6,8 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import web.pages.ProfilePage;
-import web.pages.RegistrationPage;
+import tests.web.pages.ProfilePage;
+import tests.web.pages.RegistrationPage;
 import utils.RandomUtils;
 
 import static io.qameta.allure.SeverityLevel.*;
@@ -16,13 +16,13 @@ import static io.qameta.allure.SeverityLevel.*;
 @Tag("web")
 public class RegistrationTest extends TestBase {
 
-    RegistrationPage registrationPage = new RegistrationPage();
-    ProfilePage profilePage = new ProfilePage();
-    RandomUtils randomUtils = new RandomUtils();
+    final RegistrationPage registrationPage = new RegistrationPage();
+    final ProfilePage profilePage = new ProfilePage();
+    final RandomUtils randomUtils = new RandomUtils();
 
-    String userName = randomUtils.getRandomUserName();
-    String userPassword = randomUtils.getRandomPassword();
-    String userEmail = randomUtils.getRandomEmail();
+    final String userName = randomUtils.getRandomUserName();
+    final String userPassword = randomUtils.getRandomPassword();
+    final String userEmail = randomUtils.getRandomEmail();
 
     @Test
     @Severity(BLOCKER)

@@ -1,4 +1,4 @@
-package api;
+package tests.api;
 
 import api.models.StatusResponseModel;
 import io.qameta.allure.Feature;

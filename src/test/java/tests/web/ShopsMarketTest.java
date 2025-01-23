@@ -1,4 +1,4 @@
-package web;
+package tests.web;
 
 import helpers.extensions.WithLogin;
 import io.qameta.allure.Feature;
@@ -9,7 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import web.pages.ShopsMarketPage;
+import tests.web.pages.ShopsMarketPage;
 
 import static io.qameta.allure.SeverityLevel.MINOR;
 
@@ -17,7 +17,7 @@ import static io.qameta.allure.SeverityLevel.MINOR;
 @Tag("web")
 public class ShopsMarketTest extends TestBase {
 
-    ShopsMarketPage shopsMarketPage = new ShopsMarketPage();
+    final ShopsMarketPage shopsMarketPage = new ShopsMarketPage();
 
     @ValueSource(strings = {
             "Healer",

@@ -1,4 +1,4 @@
-package api;
+package tests.api;
 
 import com.codeborne.selenide.Configuration;
 import config.WebDriverConfig;

@@ -1,4 +1,4 @@
-package mobile.screens;
+package tests.mobile.screens;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
@@ -12,9 +12,8 @@ public class ProfileScreen {
     private final SelenideElement profileName = $(id("com.habitrpg.android.habitica:id/toolbar_title"));
 
     @Step("Проверка открытия профиля пользователя с именем {username}")
-    public ProfileScreen checkProfileName(String value) {
+    public void checkProfileName(String value) {
         profileName.shouldHave(text(value));
 
-        return this;
     }
 }

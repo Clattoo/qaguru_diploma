@@ -14,7 +14,7 @@ import java.net.URL;
 
 public class BrowserstackDriver implements WebDriverProvider {
 
-    public static BrowserstackConfig browserStackConfig = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
+    public final static BrowserstackConfig browserStackConfig = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
 
     @Nonnull
     @Override
@@ -35,7 +35,7 @@ public class BrowserstackDriver implements WebDriverProvider {
 
         try {
             return new RemoteWebDriver(
-                    new URL(browserStackConfig.getRemoteUrl()), caps);
+                    new URL(browserStackConfig.getBrowserStackRemoteUrl()), caps);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

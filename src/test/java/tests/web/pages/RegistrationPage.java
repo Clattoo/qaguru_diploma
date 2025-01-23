@@ -1,24 +1,26 @@
-package web.pages;
+package tests.web.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import web.pages.components.ErrorNotificationComponent;
+import tests.web.pages.components.ErrorNotificationComponent;
 
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 
 public class RegistrationPage {
 
-    ErrorNotificationComponent errorNotificationComponent = new ErrorNotificationComponent();
+    final ErrorNotificationComponent errorNotificationComponent = new ErrorNotificationComponent();
 
     private final SelenideElement userNameInput = $("#usernameInput"),
             userEmailInput = $("#emailInput"),
             userPasswordInput = $("#passwordInput"),
             userConfirmationPasswordInput = $("#confirmPasswordInput"),
             submitRegistrationButton = $(".btn.btn-info"),
-            loginForm = $("#login-form");
+            loginForm = $("#login-form"),
+            agreementDescriptionField = $(byText("Terms of Service"));
 
 
     @Step("Открытие страницы регистрации нового пользователя")
@@ -68,6 +70,12 @@ public class RegistrationPage {
         submitRegistrationButton.click();
 
         return this;
+    }
+
+    @Step("Нажать на кнопку 'Terms of Service'")
+    public void clickTermsOfServiceButton() {
+        agreementDescriptionField.click();
+
     }
 
     @Step("Проверка появления ошибки регистрации после нажатия кнопки 'Регистрация'")

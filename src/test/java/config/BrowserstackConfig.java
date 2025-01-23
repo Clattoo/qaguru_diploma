@@ -16,8 +16,8 @@ public interface BrowserstackConfig extends Config {
     @DefaultValue("15.0")
     String getVersion();
 
-    @Key("remoteUrl")
-    String getRemoteUrl();
+    @Key("browserStackRemoteUrl")
+    String getBrowserStackRemoteUrl();
 
     @Key("user")
     String getUser();

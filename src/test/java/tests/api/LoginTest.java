@@ -1,4 +1,4 @@
-package api;
+package tests.api;
 
 import api.models.BadRequestLoginResponseModel;
 import api.models.LoginRequestModel;

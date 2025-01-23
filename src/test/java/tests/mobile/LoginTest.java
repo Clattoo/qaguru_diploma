@@ -1,12 +1,12 @@
-package mobile;
+package tests.mobile;
 
 import data.AuthData;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
-import mobile.components.OnboardingComponent;
-import mobile.screens.AuthorizationScreen;
-import mobile.screens.LoginScreen;
-import mobile.screens.ProfileScreen;
+import tests.mobile.components.OnboardingComponent;
+import tests.mobile.screens.AuthorizationScreen;
+import tests.mobile.screens.LoginScreen;
+import tests.mobile.screens.ProfileScreen;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -18,12 +18,12 @@ import static io.qameta.allure.SeverityLevel.CRITICAL;
 @Tag("android")
 public class LoginTest extends MobileTestBase {
 
-    AuthData authData = new AuthData();
+    final AuthData authData = new AuthData();
 
-    OnboardingComponent onboardingComponent = new OnboardingComponent();
-    AuthorizationScreen authorizationScreen = new AuthorizationScreen();
-    LoginScreen loginScreen = new LoginScreen();
-    ProfileScreen profileScreen = new ProfileScreen();
+    final OnboardingComponent onboardingComponent = new OnboardingComponent();
+    final AuthorizationScreen authorizationScreen = new AuthorizationScreen();
+    final LoginScreen loginScreen = new LoginScreen();
+    final ProfileScreen profileScreen = new ProfileScreen();
 
     @Test
     @Severity(CRITICAL)
