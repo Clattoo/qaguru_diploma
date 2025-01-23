@@ -17,14 +17,13 @@ import static io.qameta.allure.Allure.step;
 
 public class LoginExtension implements BeforeEachCallback {
 
+
     @Override
     public void beforeEach(ExtensionContext context) throws JsonProcessingException {
 
-        AuthData authData = AuthData.create();
-        String userName = authData.userName;
-        String userPassword = authData.password;
+        AuthData authData = new AuthData();
 
-        LoginRequestModel loginRequestModel = new LoginRequestModel(userName, userPassword);
+        LoginRequestModel loginRequestModel = new LoginRequestModel(authData.userName, authData.password);
         AuthorizationApi authorizationApi = new AuthorizationApi();
         LoginResponseModel loginResponse = authorizationApi.login(loginRequestModel);
 

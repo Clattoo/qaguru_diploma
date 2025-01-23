@@ -21,16 +21,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @Tag("api")
 public class LoginTest extends ApiTestBase {
 
-    AuthData authData = AuthData.create();
-    String userName = authData.userName;
-    String userPassword = authData.password;
+    AuthData authData = new AuthData();
 
     @Test
     @DisplayName("Выполнение успешного запроса на логин")
     @Story("Успешная авторизация с помощью POST-метода")
     void successfulLoginTest() {
 
-        LoginRequestModel loginData = new LoginRequestModel(userName, userPassword);
+        LoginRequestModel loginData = new LoginRequestModel(authData.userName, authData.password);
 
         LoginResponseModel response =
                 step("Выполнить запрос на логин и записать ответ с помощью API", () ->
