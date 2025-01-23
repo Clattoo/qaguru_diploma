@@ -64,6 +64,12 @@ Habitica — трекер задач, который позволяет поль
 <a href="https://www.atlassian.com/software/jira"><img alt="Jira" height="50" src="images/logo/Jira.svg" width="50"/></a>  
 <a href="https://telegram.org/"><img alt="Telegram" height="50" src="images/logo/Telegram.svg" width="50"/></a>
 
+
+
+
+<details>
+<summary>Подробное описание используемых в проекте технологий</summary>
+
 > </br>
 > 
 > | Логотип                                                                                                                            | Название               | Предназначение                                                                                                    |
@@ -87,10 +93,8 @@ Habitica — трекер задач, который позволяет поль
 > 
 > </details>
 
-
 </br>
 </br>
-
 
 </div>
 
@@ -103,6 +107,7 @@ Habitica — трекер задач, который позволяет поль
 - [x] Проверка включения фильтра предметов по классу в разделе Shops/Market (@ParameterizedTest + @WithLogin)
 
 ### Api
+- [x] Выполнение запроса на проверку статуса серверов Habitica
 - [x] Выполнение успешного запроса на авторизацию
 - [x] Выполнение неудачного запроса на вход с пустым паролем
 - [x] Выполнение неудачного запроса на вход с пустым телом
