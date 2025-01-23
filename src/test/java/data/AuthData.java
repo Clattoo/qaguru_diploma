@@ -12,7 +12,6 @@ public class AuthData {
         this.password = config.getTestUserPassword();
     }
 
-    // Статический метод для создания экземпляра AuthData с использованием конфигурации
     public static AuthData create() {
         WebDriverConfig webDriverConfig = ConfigFactory.create(WebDriverConfig.class);
         return new AuthData(webDriverConfig);
