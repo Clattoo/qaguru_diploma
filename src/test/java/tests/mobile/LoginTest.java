@@ -41,7 +41,7 @@ public class LoginTest extends MobileTestBase {
     public void loginWithoutUserNameTest() {
         onboardingComponent.clickSkipButton();
         authorizationScreen.clickLoginButton();
-        loginScreen.setPassword(authData.password)
+        loginScreen.setPassword(authData.userPassword)
                 .clickLoginButton()
                 .checkErrorTitleNotification("Validation Error");
     }
@@ -53,7 +53,7 @@ public class LoginTest extends MobileTestBase {
         onboardingComponent.clickSkipButton();
         authorizationScreen.clickLoginButton();
         loginScreen.setUserName(authData.userName)
-                .setPassword(authData.password)
+                .setPassword(authData.userPassword)
                 .clickLoginButton();
         profileScreen.checkProfileName(authData.userName);
     }

@@ -27,9 +27,4 @@ public interface WebDriverConfig extends Config {
     @Key("remoteUrl")
     String getRemoteUrl();
 
-    @Key("testUserName")
-    String getTestUserName();
-
-    @Key("testUserPassword")
-    String getTestUserPassword();
 }

@@ -23,7 +23,7 @@ public class LoginExtension implements BeforeEachCallback {
 
         AuthData authData = new AuthData();
 
-        LoginRequestModel loginRequestModel = new LoginRequestModel(authData.userName, authData.password);
+        LoginRequestModel loginRequestModel = new LoginRequestModel(authData.userName, authData.userPassword);
         AuthorizationApi authorizationApi = new AuthorizationApi();
         LoginResponseModel loginResponse = authorizationApi.login(loginRequestModel);
 

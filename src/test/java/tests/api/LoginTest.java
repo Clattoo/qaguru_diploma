@@ -28,7 +28,7 @@ public class LoginTest extends ApiTestBase {
     @Story("Успешная авторизация с помощью POST-метода")
     void successfulLoginTest() {
 
-        LoginRequestModel loginData = new LoginRequestModel(authData.userName, authData.password);
+        LoginRequestModel loginData = new LoginRequestModel(authData.userName, authData.userPassword);
 
         LoginResponseModel response =
                 step("Выполнить запрос на логин и записать ответ с помощью API", () ->

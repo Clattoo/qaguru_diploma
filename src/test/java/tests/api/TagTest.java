@@ -25,7 +25,7 @@ public class TagTest extends ApiTestBase {
     AuthData authData = new AuthData();
 
     final RandomUtils randomUtils = new RandomUtils();
-    final LoginRequestModel loginRequestModel = new LoginRequestModel(authData.userName, authData.password);
+    final LoginRequestModel loginRequestModel = new LoginRequestModel(authData.userName, authData.userPassword);
     final AuthorizationApi authorizationApi = new AuthorizationApi();
     final LoginResponseModel loginResponse = authorizationApi.login(loginRequestModel);
 
