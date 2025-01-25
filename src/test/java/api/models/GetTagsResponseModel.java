@@ -11,6 +11,8 @@ public class GetTagsResponseModel {
     Boolean success;
     List<TagDataModel> data;
     List<NotificationsModel> notifications;
+    int userV;
+    String appVersion;
 
     @Data
     @JsonIgnoreProperties(ignoreUnknown = true)

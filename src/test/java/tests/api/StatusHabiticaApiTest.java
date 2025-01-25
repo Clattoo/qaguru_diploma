@@ -11,7 +11,7 @@ import static api.specs.ReqResSpec.responseSpec;
 import static io.restassured.RestAssured.given;
 import static api.specs.ReqResSpec.requestSpec;
 import static io.qameta.allure.Allure.step;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 @Feature("Тестирование статуса серверов Habitica через API")
 @Tag("api")
@@ -31,6 +31,8 @@ public class StatusHabiticaApiTest extends ApiTestBase {
                         .extract().as(StatusResponseModel.class));
         step("Проверка успешности выполнения запроса", () -> {
             assertTrue(response.getSuccess());
+            assertNotNull(response.getAppVersion());
+            assertEquals("up", response.getData().getStatus());
         });
     }
 }

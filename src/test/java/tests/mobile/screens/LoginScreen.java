@@ -16,7 +16,7 @@ public class LoginScreen {
     @Step("Ввод имени пользователя {username} в поле ввода")
     public LoginScreen setUserName(String username) {
         userNameField.click();
-        userNameField.setValue(username);
+        userNameField.sendKeys(username);
 
         return this;
     }
@@ -24,7 +24,7 @@ public class LoginScreen {
     @Step("Ввод пароля пользователя {password} в поле ввода")
     public LoginScreen setPassword(String password) {
         passwordField.click();
-        passwordField.setValue(password);
+        passwordField.sendKeys(password);
 
         return this;
     }

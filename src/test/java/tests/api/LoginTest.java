@@ -14,8 +14,7 @@ import static api.specs.ReqResSpec.requestSpec;
 import static api.specs.ReqResSpec.responseSpec;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 @Feature("Тестирование авторизации с помощью API")
 @Tag("api")
@@ -43,6 +42,11 @@ public class LoginTest extends ApiTestBase {
                                 .extract().as(LoginResponseModel.class));
         step("Проверить результат запроса", () -> {
             assertTrue(response.getSuccess());
+            assertEquals(authData.userName, response.getData().getUsername());
+            assertNotNull(response.getData().getId());
+            assertNotNull(response.getData().getApiToken());
+            assertFalse(response.getData().getNewUser());
+            assertNotNull(response.getAppVersion());
         });
 
     }
@@ -66,7 +70,11 @@ public class LoginTest extends ApiTestBase {
                                 .statusCode(400)
                                 .extract().as(BadRequestLoginResponseModel.class));
         step("Проверить сообщение об отсутствующем пароле в ответе запроса", () -> {
+            assertFalse(response.getSuccess());
+            assertEquals("BadRequest", response.getError());
+            assertEquals("Invalid request parameters.", response.getMessage());
             assertEquals("Missing password.", response.getErrors().get(0).getMessage());
+            assertEquals("password", response.getErrors().get(0).getParam());
         });
     }
 
@@ -85,6 +93,8 @@ public class LoginTest extends ApiTestBase {
                                 .statusCode(400)
                                 .extract().as(BadRequestLoginResponseModel.class));
         step("Проверить информацию из тела ответа", () -> {
+            assertFalse(response.getSuccess());
+            assertEquals("BadRequest", response.getError());
             assertEquals("Invalid request parameters.", response.getMessage());
             assertEquals("Missing username or email.", response.getErrors().get(0).getMessage());
             assertEquals("username", response.getErrors().get(0).getParam());

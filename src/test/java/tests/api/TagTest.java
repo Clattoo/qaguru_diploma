@@ -15,8 +15,7 @@ import static api.specs.ReqResSpec.requestSpec;
 import static api.specs.ReqResSpec.responseSpec;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 @Feature("Тестирование тегов через API")
 @Tag("api")
@@ -46,6 +45,9 @@ public class TagTest extends ApiTestBase {
         step("Проверка успешности выполнения запроса", () -> {
             assertTrue(response.getSuccess());
             assertEquals("Claire", response.getData().get(0).getName());
+            assertNotNull(response.getData().get(0).getId());
+            assertNotNull(response.getUserV());
+            assertNotNull(response.getAppVersion());
         });
     }
 
@@ -70,6 +72,11 @@ public class TagTest extends ApiTestBase {
                         .extract().as(TagResponseModel.class));
         step("Проверить результат добавления тега", () -> {
             assertTrue(postResponse.getSuccess());
+            assertEquals(addTag.getName(), postResponse.getData().getName());
+            assertNotNull(postResponse.getData().getId());
+            assertNotNull(postResponse.getAppVersion());
+            assertNotNull(postResponse.getUserV());
+
         });
 
         TagResponseModel deleteResponse = step("Удаление ранее добавленного тега с помощью DELETE-запроса", () ->
@@ -85,6 +92,8 @@ public class TagTest extends ApiTestBase {
                         .extract().as(TagResponseModel.class));
         step("Проверить успешность выполнения запроса", () -> {
             assertTrue(deleteResponse.getSuccess());
+            assertNotNull(deleteResponse.getAppVersion());
+            assertNotNull(deleteResponse.getUserV());
         });
     }
 }
